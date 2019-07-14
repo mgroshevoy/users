@@ -1,9 +1,16 @@
 <div>
-    <div class="h-center" *ngFor="let user of userList">
+    <div class="h-center" *ngFor="let user of userList.data">
       <span>
         <a [routerLink]="['/user/', user.id]">
         <img src="{{user.avatar}}">
           {{user.id}} {{user.first_name}} {{user.last_name}}</a>
       </span>
     </div>
+  <div class="h-center">
+    <ul>
+      <li class="h-list" *ngFor="let pageNumber of pagingItems">
+        <h2> <a [routerLink]="['/userlist', pageNumber]">{{pageNumber}}</a> </h2>
+      </li>
+    </ul>
+  </div>
 </div>
