@@ -1,0 +1,9 @@
+<div>
+    <div class="h-center" *ngFor="let user of userList">
+      <span>
+        <a [routerLink]="['/user/', user.id]">
+        <img src="{{user.avatar}}">
+          {{user.id}} {{user.first_name}} {{user.last_name}}</a>
+      </span>
+    </div>
+</div>
