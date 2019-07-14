@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {Observable, BehaviorSubject} from "rxjs";
+import {Observable, BehaviorSubject} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -14,14 +14,8 @@ export class GetUserListService {
   }
 
   public getUserList(page: number = 1): Observable<any> {
-    console.log(this.cache.value);
-    const pageContent = this.cache.value.find(item => item.page === page);
-    if (pageContent) {
-      return pageContent.content;
-    } else {
-      const apiUrl = 'https://reqres.in/api/users?page=';
-      return this.http.get(`${apiUrl}${page}`);
-    }
+     const apiUrl = 'https://reqres.in/api/users?page=';
+     return this.http.get(`${apiUrl}${page}`);
   }
 
   public getUser(id: number): any {
